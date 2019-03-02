@@ -1,0 +1,36 @@
+<html>
+<head>
+  <title>Object Localizer</title>
+  <style>
+  #coords{
+    width:25vw;
+    margin:auto;
+  }
+  img{
+  	border: 1px solid black;
+  }
+  </style>
+</head>
+<body>
+  <div align='center' >
+    <h1>OBJECT LOCALIZATION</h1>
+    <form action = "" method = "POST" enctype = "multipart/form-data">
+      <input type = "file" name = "file">
+      <input type = "submit" value="Upload Image">
+    </form>
+  </div>
+  {% if after %}
+  <div id='coords'>
+  <p>
+    <u>CORNERS</u></br>
+    upper-left &nbsp : ({{coords[0]}}, {{coords[2]}})</br>
+    lower-right : ({{coords[1]}}, {{coords[3]}})
+  </p>
+  </div>
+  <br><center>
+    <img src="{{url_for('static', filename='result.jpg')}}" width="500vw"
+    style="max-height:400vw">
+  </center>
+  {% endif %}
+</body>
+</html>
