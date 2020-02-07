@@ -28,4 +28,5 @@ def add_header(response):
     response.headers['Cache-Control'] = 'public, max-age=0'
     return response
 
-app.run(debug=True)
+if __name__ == "__main__":
+    app.run(debug=True)
